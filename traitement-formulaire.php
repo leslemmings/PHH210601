@@ -9,15 +9,19 @@
 </head>
 
 <body>
+    <h1>Création variable + calcule</h1>
     <?php 
     $mavar=1;
     $mavar = $mavar + 3;
     echo $mavar; ?>
 
+    <h1>Affichage tableau POST</h1>
     <?php print_r($_POST) ; ?>
 
+    <h1>Affichage valeur d'un champ POST</h1>
     <?php echo $_POST["titre-produit"] ; ?>
 
+    <h1>Test POST ou GET</h1>
     <?php 
     $mesData=null;
     if(count($_GET) > 0)
