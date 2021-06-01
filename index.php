@@ -60,14 +60,14 @@
 
     </div id="form-produit">
     <!-- bs3-form -->
-    <form action="traitement-formulaire.php" method="GET" role="form">
+    <form action="traitement-formulaire.php" method="POST" role="form">
         <legend>Edition produit</legend>
 
         <div class="form-group">
             <label for="titre-produit">Produit</label>
             <input type="text" class="form-control" id="titre-produit" name="titre-produit" placeholder="nom produit">
             <label for="ref-produit">Référance</label>
-            <input type="text" name="ref-produit" id="ref-produit" class="form-control" value="" required="required" pattern="REF-[\d\w]{1,25}" title="">
+            <input type="text" name="ref-produit" id="ref-produit" class="form-control" value="REF-" required="required" pattern="REF-[\d\w]{1,25}" title="">
             <label for="cat-produit">Catégortie</label>
             <select name="" id="cat-produit" name="cat-produit" class="form-control" required="required">
                 <option value="guitar">Guitar</option>
