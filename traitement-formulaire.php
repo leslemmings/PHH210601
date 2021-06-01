@@ -7,6 +7,6 @@
     <title>traitement-formulaire</title>
 </head>
 <body>
-    
+    <?php print_r($_GET) ; ?>
 </body>
 </html>
