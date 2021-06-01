@@ -39,6 +39,33 @@
     print_r($mesData);
      ?>
 
+<h1>Check de la presence de la photo</h1>
+<?php 
+    $mesData=null;
+    if(count($_GET) > 0)
+    {
+        $mesData=$_GET;
+    }
+    elseif(count($_POST) > 0)
+    {
+        $mesData=$_POST;
+    }
+    else{
+        echo 'Aucune donnée trouvée !';
+        exit(0);
+    }
+    $maPhoto=null;
+    if(array_key_exists("photo-produit", $mesData) && strlen($mesData["photo-produit"]))
+    {
+        $maPhoto=$mesData["photo-produit"];
+    }
+    else
+    {
+        echo "pas de photo";
+    }
+    echo $maPhoto;
+     ?>
+
 </body>
 
 </html>
