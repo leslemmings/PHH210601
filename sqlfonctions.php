@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ * fonction de selection en table sql
+ * @param mixed $query passage de la requete
+ * 
+ * @return [type] array de retour de la query
+ */
 function selectTable($query)
 {
     // connexion a la BDD
@@ -20,17 +27,14 @@ function selectTable($query)
 
     //$rowscount = mysqli_num_rows($res);
     //echo 'rows count : '.$rowscount.'<hr/>';
-    
     while($row = mysqli_fetch_assoc($res))
     {
-        //print_r($row);
-        //echo '<hr/>';
         array_push($arrayresult, $row);
     };
 
     return $arrayresult;
 }
 
-$result = selectTable("SELECT * FROM produits ;");
-print_r($result);
+//$result = selectTable("SELECT * FROM categorie ;");
+//print_r($result);
 ?>
