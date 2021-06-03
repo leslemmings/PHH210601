@@ -23,6 +23,8 @@
                     <input name="recherche" type="text" class="form-control" placeholder="Search" 
                         value="<?= isset($_GET["recherche"])?$_GET["recherche"]:"";?>">
                 </div>
+                <div id="completion-container" 
+                    style="border:1px solid black;background-color:skyblue; position:fixed;left:44.3%;height:auto;min-height:50px;width:205px;"></div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
