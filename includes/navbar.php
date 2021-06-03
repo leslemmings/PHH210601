@@ -17,9 +17,11 @@
                 <li><a href="?page=new">Nouveau Produit</a></li>
                 <li><a href="?page=produit&idp=1">Produit 1</a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search">
+            <form action="" method="GET" class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="hidden" name="page" id="input" class="form-control" value="listproduits">
+                    <input name="recherche" type="text" class="form-control" placeholder="Search" 
+                        value="<?= isset($_GET["recherche"])?$_GET["recherche"]:"";?>">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

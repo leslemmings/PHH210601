@@ -55,7 +55,12 @@ function getProduit($id)
 
 function getProduits($search=false)
 {
-    $query="SELECT `idproduit`, `idcat`, `titre`, `ref`, `prix`, `photo`, `description` FROM `produits`;";
+    $query="SELECT `idproduit`, `idcat`, `titre`, `ref`, `prix`, `photo`, `description` FROM `produits` ";
+    if(isset($search))
+    {
+        $query.= "WHERE `titre` LIKE '%".$search."%'";
+    }
+    $query.=";";
     return selectTable($query);
 }
 ?>

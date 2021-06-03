@@ -4,16 +4,28 @@
     // includes 
     include 'sqlfonctions.php';
 
-    // recup du produit en base
-    $retourProduit = getProduits();
-    // vérification des donées venant de la base
-    if(!isset($retourProduit))
+    $maRecherche = null;
+    if(isset($_GET["recherche"]))
     {
-        header('Location: ?page=pageErreur&code=3');
+        $maRecherche = $_GET["recherche"];
+        if(strlen($maRecherche)>0)
+        {
+            echo 'Pour la recherche :'.$maRecherche;
+        }
+    }
+    // recup du produit en base
+    $retourProduit = getProduits($maRecherche);
+    // vérification des donées venant de la base
+    if(!isset($retourProduit) or empty($retourProduit))
+    {
+        //header('Location: ?page=pageErreur&code=3');
+        echo '</br>Aucun produit trouvé.';
+        exit(0);
     }
     else
     {
         $mesProduits = $retourProduit;
+        echo 'Il y a '.count($mesProduits).' résultat(s)';
     }
 ?>
 

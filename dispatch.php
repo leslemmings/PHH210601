@@ -15,6 +15,9 @@ if(isset($_GET["page"]))
         case 'produit':
             include('includes/produit.php');
             break;
+        case 'produit':
+            include('includes/search.php');
+             break;
         case 'pageErreur':
                 include('pageErreur.php');
             break;
