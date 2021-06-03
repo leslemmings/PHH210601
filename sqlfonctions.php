@@ -37,4 +37,26 @@ function selectTable($query)
 
 //$result = selectTable("SELECT * FROM categorie ;");
 //print_r($result);
+/**
+ * getProduit
+ * 
+ * Méthode de récupération de produit + cat
+ *
+ * @param  mixed $id
+ * @return void
+ */
+function getProduit($id)
+{
+    $query="SELECT `idproduit`, PR.`titre` AS `titreProduit`, `ref`, `prix`, `photo`, PR.`description`, CA.`titre` AS `titreCat`, PR.`description` 
+        FROM `produits` PR, `categorie` CA 
+        WHERE `idcat`=`idcategorie` AND PR.`idproduit`=".$id.";";
+    return selectTable($query);
+}
+
+function getListProduits()
+{
+    $query="SELECT `idproduit`, `idcat`, `titre`, `ref`, `prix`, `photo`, `description` FROM `produits`;";
+    return selectTable($query);
+}
 ?>
+

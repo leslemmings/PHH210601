@@ -10,13 +10,15 @@ if(isset($_GET["page"]))
             include('includes/panier.php');
             break;
         case 'listproduits':
-        include('includes/listproduits.php');
-        break;
+            include('includes/listproduits.php');
+            break;
         case 'produit':
-        include('includes/produit.php');
-        break;
+            include('includes/produit.php');
+        case 'pageErreur':
+                include('pageErreur.php');
+            break;
         default:
-        include('includes/home.php'); 
+            include('includes/home.php'); 
         break;
     }
 }
