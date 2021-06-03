@@ -1,0 +1,32 @@
+body{
+    color: green;
+}
+
+.produit>div{
+    display: inline-block;
+}
+
+.produit .left img{
+    width: 200px;
+    max-height: 300px;
+}
+
+.listProduits .produits>*{
+    display:inline;
+    vertical-align:middle
+}
+
+.listProduits{
+    width: 100%;
+}
+
+.listProduits .produits{
+    border: 1px;
+    border-color: gray;
+    border-bottom: gray;
+}
+    
+.listProduits .produits img{
+    width: 100px;
+    max-height: 150px;
+}

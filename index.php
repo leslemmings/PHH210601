@@ -22,6 +22,22 @@
         include('dispatch.php');
     ?>
 
+<script>
+        document.querySelector("nav form input[name=recherche]")
+            .addEventListener('change',function(evt){
+                if(evt.target.value.length<=1){
+                    document.querySelector('#completion-container').style.display='none';
+                    return;
+                }
+                fetch('http://localhost/phh/autocomplete.php?recherche='+evt.target.value)
+                    .then(e=>e.text())
+                    .then(t=>{
+                        document.querySelector('#completion-container').innerHTML=t;
+                        document.querySelector('#completion-container').style.display='block';
+                    });
+                }
+            );
+    </script>
     
 </body>
 
