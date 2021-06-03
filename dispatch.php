@@ -6,10 +6,18 @@ if(isset($_GET["page"]))
         case 'edit':
             include('includes/formproduit.php');
             break;
-        
+        case 'panier':
+            include('includes/panier.php');
+            break;
+        case 'listproduits':
+        include('includes/listproduits.php');
+        break;
+        case 'produit':
+        include('includes/produit.php');
+        break;
         default:
         include('includes/home.php'); 
-            break;
+        break;
     }
 }
 else
