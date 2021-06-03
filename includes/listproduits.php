@@ -5,7 +5,7 @@
     include 'sqlfonctions.php';
 
     // recup du produit en base
-    $retourProduit = getListProduits();
+    $retourProduit = getProduits();
     // vérification des donées venant de la base
     if(!isset($retourProduit))
     {
@@ -19,19 +19,27 @@
 
 <style type="text/css">
     .listProduits .produits>*{display:inline;vertical-align:middle}
-    .listProduits .produits img{width:384px;}
+    .listProduits .produits img{width:200px;}
 </style>
 
 <div class="listProduits">
-    <div class="produits">
         <?php 
             for($i=0;$i<count($mesProduits);$i++)
             {
-                echo '<img src="'.$mesProduits[$i]["photo"].'" class="img" alt="img">';
-                echo '<h3 class="titre">'.$mesProduits[$i]["titre"].'</h3>';
-                echo '<h3 class="titre">'.$mesProduits[$i]["prix"].'</h3>';
-                echo '<button type="Ajouter" class="btn btn-primary">Ajouter Produit</button>';
+                $monProduit = $mesProduits[$i];
+        ?>
+
+        <div class="produits">
+            <img src="<?=$monProduit["photo"]?>" class="img" alt="img">
+            <h3 class="titre"><?=$monProduit["titre"]?></h3>
+            <h3 class="titre"><?=$monProduit["prix"]?></h3>
+            <a href="?page=produit&idp=<?=$monProduit["idproduit"]?>" target="_blank" rel="noopener noreferrer">
+            <button type="button" class="btn btn-primary">Voir Produit</button></a>
+            <button type="button" class="btn btn-primary">Ajouter Produit</button>
+        </div>
+        
+        <?php
             }
         ?>
-    </div>
+
 </div>

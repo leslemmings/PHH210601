@@ -53,7 +53,7 @@ function getProduit($id)
     return selectTable($query);
 }
 
-function getListProduits()
+function getProduits($search=false)
 {
     $query="SELECT `idproduit`, `idcat`, `titre`, `ref`, `prix`, `photo`, `description` FROM `produits`;";
     return selectTable($query);
